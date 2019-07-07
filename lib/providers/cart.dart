@@ -15,9 +15,11 @@ class CartItem {
 }
 
 class Cart with ChangeNotifier {
-    Map<String, CartItem> _items;
+    Map<String, CartItem> _items = {};
 
     Map<String, CartItem> get item => Map.from(_items);
+
+    int get itemCount => _items.length;
 
     void addItem(String productId, double price, String title) {
         if (_items.containsKey(productId)) {
@@ -41,5 +43,6 @@ class Cart with ChangeNotifier {
                 ),
             );
         }
+        notifyListeners();
     }
 }
