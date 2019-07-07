@@ -7,8 +7,7 @@ import '../providers/products.dart';
 class ProductsGrid extends StatelessWidget {
     @override
     Widget build(BuildContext context) {
-        final productData = Provider.of<Products>(context);
-        final products = productData.items;
+        final products = Provider.of<Products>(context).items;
 
         return GridView.builder(
             padding: const EdgeInsets.all(10),
