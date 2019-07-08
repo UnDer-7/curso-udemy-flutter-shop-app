@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 
 import '../widgets/products_grid.dart';
 import '../widgets/badge.dart';
+import '../widgets/app_drawer.dart';
 
 import '../providers/cart.dart';
 import '../routes.dart';
@@ -22,6 +23,8 @@ class _ProductsOverviewScreenState extends State<ProductsOverviewScreen> {
     @override
     Widget build(BuildContext context) {
         return Scaffold(
+            drawer: AppDrawer(),
+            body: ProductsGrid(_showOnlyFavorites),
             appBar: AppBar(
                 title: Text('MyShop'),
                 actions: <Widget>[
@@ -64,7 +67,6 @@ class _ProductsOverviewScreenState extends State<ProductsOverviewScreen> {
                     ),
                 ],
             ),
-            body: ProductsGrid(_showOnlyFavorites),
         );
     }
 }
